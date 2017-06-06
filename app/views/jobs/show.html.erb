@@ -19,7 +19,4 @@ Related Tags:
 <% end %>
 <br>
 
-Tags:
-<% @tags.each do |tag| %>
-  <%= tag.name %> - <%= tag.jobs.count %><br>
-<% end %>
+Tags: <%= render partial: 'tags/count' %>
