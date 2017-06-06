@@ -2,10 +2,10 @@ require 'rails_helper'
 
 describe "User sees a specific job tags" do
   scenario "a user sees all the tags related to a job" do
-    company = Company.create!(name: "ESPN")
+    company = Company.create!(name: "ESPN1")
     job = company.jobs.create!(title: "Developer", level_of_interest: 70, city: "Denver")
-    tag1 = job.tags.create!(name: "Software")
-    tag2 = job.tags.create!(name: "Good-Location")
+    tag1 = job.tags.create!(name: "Full stack")
+    tag2 = job.tags.create!(name: "Back End")
 
     visit company_job_path(company, job)
 
