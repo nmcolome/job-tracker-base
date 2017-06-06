@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "User sees a specific job" do
   scenario "a user sees all the jobs related to a tag" do
-    company = Company.create!(name: "ESPN2")
+    company = create(:company)
     job = company.jobs.create!(title: "Developer", level_of_interest: 70, city: "Denver")
     job1 = company.jobs.create!(title: "Developer", level_of_interest: 70, city: "Denver")
     job2 = company.jobs.create!(title: "Developer", level_of_interest: 70, city: "Denver")
