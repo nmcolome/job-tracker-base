@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "User sees a specific job" do
   scenario "a user sees all the jobs related to a tag" do
-    company = create(:company)
+    company = Company.create!(name: "ESPN2")
     job = company.jobs.create!(title: "Developer", level_of_interest: 70, city: "Denver")
     job1 = company.jobs.create!(title: "Developer", level_of_interest: 70, city: "Denver")
     job2 = company.jobs.create!(title: "Developer", level_of_interest: 70, city: "Denver")
@@ -30,7 +30,7 @@ describe "User sees a specific job" do
     JobTag.create(job_id: job8.id, tag_id: tag2.id)
 
     visit company_job_path(company, job)
-save_and_open_page
+
     expect(page).to have_content("#{tag1.name} - 5")
     expect(page).to have_content("#{tag2.name} - 9")
   end
