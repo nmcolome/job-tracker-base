@@ -22,5 +22,10 @@ describe Tag do
       tag = Tag.new(name: 'Software')
       expect(tag).to respond_to(:jobs)
     end
+
+    it "has many job_tags" do
+      tag = Tag.new(name: 'Software')
+      expect(tag).to respond_to(:job_tags)
+    end
   end
 end
